@@ -3,7 +3,7 @@
    编辑博客
   </div>
 </template>
-<style src="./template.css"></style>
+<style lang="less" scoped src="./template.less"></style>
 <script src="./template.js"></script>
 
 
