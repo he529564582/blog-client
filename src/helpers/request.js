@@ -5,7 +5,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-from-urlencoded
 axios.defaults.baseUEL = 'http://blog-server.hunger-valley.com'
 axios.defaults.withCredentials = true
 
-export default function request (url,typ = 'GET',data = {}) {
+export default function request (url,type = 'GET',data = {}) {
   return new Promise((resolve,reject) =>{
     let option = {
       url,
