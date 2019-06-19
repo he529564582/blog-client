@@ -40,7 +40,7 @@ export default {
   #footer {
     grid-area: footer;
     padding-left: 12%;
-    padding-left: 12%;
+    padding-right: 12%;
   }
 }
 @media(max-width:768px) {

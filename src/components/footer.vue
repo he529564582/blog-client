@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>©️ www.baidu.com 2019</p>
+    <p>©️  2019</p>
   </footer>
 </template>
 <style scoped>

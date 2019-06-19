@@ -120,6 +120,7 @@ header.login {
     border: 1px solid #fff;
     border-radius: 50%;
     margin-left: 15px;
+    margin-right: 15px;
   }
 
   .user {
