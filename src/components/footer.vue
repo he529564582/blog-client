@@ -1,13 +1,13 @@
 <template>
   <footer>
-    <p>©️  2019</p>
+    <p>©️2019©️</p>
   </footer>
 </template>
 <style scoped>
   footer {
     align-self:end;
-    background-color:#d1d1d1;
-    color: #666;
+    background-color:#888;
+    color: #333;
     font-size: 13px;
     padding: 10px;
     text-align: center;
