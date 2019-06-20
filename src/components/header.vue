@@ -119,8 +119,8 @@ header.login {
     height: 40px;
     border: 1px solid #fff;
     border-radius: 50%;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 20px;
+    margin-right: 40px;
   }
 
   .user {
@@ -149,13 +149,9 @@ header.login {
       }
 
     }
-
     &:hover ul {
       display: block;
     }
   }
 }
-
-
-
 </style>
