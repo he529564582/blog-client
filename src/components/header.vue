@@ -4,18 +4,30 @@
       <h1>Let's share</h1>
       <p>精品博客汇聚</p>
       <div class="btns">
-        <router-link to="/login"><el-button >立即登录</el-button></router-link>
-        <router-link to="/register"><el-button>注册账号</el-button></router-link>
+        <router-link to="/login">
+          <el-button>立即登录</el-button>
+        </router-link>
+        <router-link to="/register">
+          <el-button>注册账号</el-button>
+        </router-link>
       </div>
     </template>
     <template v-if="isLogin">
-      <h1><router-link to="/">Let's share</router-link></h1>
-      <router-link to="/create"><i class="edit el-icon-plus"></i></router-link>
+      <h1>
+        <router-link to="/">Let's share</router-link>
+      </h1>
+      <router-link to="/create">
+        <i class="edit el-icon-plus"></i>
+      </router-link>
       <div class="user">
-        <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
+        <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username" />
         <ul>
-          <li><router-link to="/my">我的</router-link></li>
-          <li><a href="#" @click="onLogout">注销</a></li>
+          <li>
+            <router-link to="/my">我的</router-link>
+          </li>
+          <li>
+            <a href="#" @click="onLogout">注销</a>
+          </li>
         </ul>
       </div>
     </template>
@@ -23,45 +35,36 @@
 </template>
 
 <script>
+import auth from "@/api/auth";
+window.auth = auth;
 
-  import auth from '@/api/auth'
-  window.auth = auth
+import { mapGetters, mapActions } from "vuex";
 
-  import { mapGetters, mapActions } from 'vuex'
+export default {
+  data() {
+    return {};
+  },
 
-  export default {
-    data() {
-      return {}
-    },
+  computed: {
+    ...mapGetters(["isLogin", "user"])
+  },
 
-    computed: {
-      ...mapGetters([
-        'isLogin',
-        'user'
-        ])
-    },
+  created() {
+    this.checkLogin();
+  },
 
-    created() {
-      this.checkLogin()
-    },
+  methods: {
+    ...mapActions(["checkLogin", "logout"]),
 
-    methods: {
-      ...mapActions([
-        'checkLogin',
-        'logout'
-        ]),
-
-      onLogout() {
-        this.logout()
-      }
+    onLogout() {
+      this.logout();
     }
-
   }
+};
 </script>
 
 
 <style lang="less">
-
 @import "../assets/base.less";
 
 header.no-login {
@@ -90,7 +93,6 @@ header.no-login {
     margin: 20px 5px 0;
   }
 }
-
 
 header.login {
   display: flex;
@@ -121,6 +123,7 @@ header.login {
     border-radius: 50%;
     margin-left: 20px;
     margin-right: 40px;
+    cursor: pointer;
   }
 
   .user {
@@ -129,13 +132,12 @@ header.login {
     ul {
       display: none;
       position: absolute;
-      right: 0;
+      right: 36px;
       list-style: none;
       border: 1px solid #eaeaea;
-      margin:0;
+      margin: 0;
       padding: 0;
       background-color: #fff;
-
       a {
         text-decoration: none;
         color: #333;
@@ -147,7 +149,6 @@ header.login {
           background-color: #eaeaea;
         }
       }
-
     }
     &:hover ul {
       display: block;
